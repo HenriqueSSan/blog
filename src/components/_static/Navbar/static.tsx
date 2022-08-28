@@ -12,21 +12,21 @@ export function Navbar({ state }: NavbarProps) {
 
   return (
     <>
-      <header>
-        <div className="container" aria-label="header__container container">
-          <div className="group" aria-label="titles__group">
-            <h1>Codelândia</h1>
-            <h2>Blog</h2>
+      <header className="l-header">
+        <div className="l-header__container container" aria-label="header__container container">
+          <div className="l-header__titles">
+            <h1 className="l-header__title">Codelândia</h1>
+            <h2 className="l-header__subtitle">Blog</h2>
           </div>
-          <nav className="navigation" aria-label="nav">
+          <nav className="nav" aria-label="nav">
             <div aria-label="nav__search">
-              <i className="bx bx-search"></i>
+              {/* {<i className="bx bx-search"></i>} */}
               <input
+                className="nav__input"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 type="text"
                 placeholder="Pesquisar no blog"
-                aria-label="nav__input"
               />
             </div>
           </nav>

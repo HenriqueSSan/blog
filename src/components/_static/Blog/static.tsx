@@ -28,13 +28,13 @@ export function Blog({ state }: BlogProps) {
   }, [search]);
 
   return (
-    <section>
-      <div className="containers">
+    <section className="articles">
+      <div className="articles__container container">
         {filterBlog.map((blogs, index) => {
           return (
             <div key={index} className="cards">
-              <div className="cards-container">
-                <div className="card-header">
+              <div className="card__container">
+                <header className="card__header">
                   <span>
                     {new Intl.DateTimeFormat('pt', {
                       day: 'numeric',
@@ -53,17 +53,15 @@ export function Blog({ state }: BlogProps) {
                   >
                     <i
                       className={`icon ${
-                        blogs.favorite === false
-                          ? 'bx bx-heart fs-md'
-                          : 'bx bxs-heart clr-red fs-lg'
+                        blogs.favorite === false ? 'bx bx-heart' : 'bx bxs-heart clr-red fs-lg'
                       }`}
                     ></i>
                   </div>
-                </div>
+                </header>
 
-                <article>
-                  <h2>{blogs.title}</h2>
-                  <p>{blogs.description}</p>
+                <article className="card__content">
+                  <h2 className="card__title">{blogs.title}</h2>
+                  <p className="card__description">{blogs.description}</p>
                 </article>
               </div>
             </div>
