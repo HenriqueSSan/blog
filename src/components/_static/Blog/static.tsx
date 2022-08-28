@@ -53,7 +53,9 @@ export function Blog({ state }: BlogProps) {
                   >
                     <i
                       className={`icon ${
-                        blogs.favorite ? 'bx bx-heart fs-md' : 'bx bxs-heart clr-red fs-lg'
+                        blogs.favorite === false
+                          ? 'bx bx-heart fs-md'
+                          : 'bx bxs-heart clr-red fs-lg'
                       }`}
                     ></i>
                   </div>
